@@ -1,0 +1,7 @@
+.conic {
+    width: 500px;
+    height: 500px;
+    border-radius: 9999px;
+    background: red;
+    background: conic-gradient(red 10%, yellow 10%, yellow 30%, green 30%, green 50%, blue 50%, blue 70%);
+}

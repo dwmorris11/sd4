@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var cat = {
+            noise: "Meow",
+            makeNoise: function () {
+                console.log(this.noise)
+            },
+        }
+        cat.makeNoise();
+        cat.makeNoise = function () {
+            console.log(this.noise, " ", this.noise)
+        };
+        cat.makeNoise();
+
+        var cube = {
+            edge: 3,
+            area: () => cube.edge * cube.edge,
+            volume: () => Math.pow(cube.edge, 3),
+        }
+        console.log("volume", cube.volume());
+    </script>
+</body>
+
+</html>

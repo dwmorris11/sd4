@@ -1,0 +1,22 @@
+#blue_border {
+    border: 1px solid blue;
+}
+
+#red_border {
+    border: 1px solid red;
+    position: absolute;
+    left: 200px;
+}
+
+#green_border {
+    position: absolute;
+    border: 1px solid green;
+    left: 400px;
+    top: 550px;
+}
+
+.container {
+    width: fit-content;
+    text-align: center;
+    margin: 15px;
+}

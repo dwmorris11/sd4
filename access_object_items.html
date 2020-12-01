@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Access & Modify Object</title>
+</head>
+
+<body>
+    <script>
+        // Information about the Hiking Bermuda book by Cecile Davidson
+        var hikingBermuda = {
+            author: "Cecile Davidson",
+            price: 17.95,
+            title: "Hiking Bermuda",
+            sections: {
+                0: {
+                    sectionName: "Preface",
+                    chapters: [{
+                        name: "Trail Locator",
+                        page: 12
+                    }]
+                },
+                1: {
+                    sectionName: "Introduction",
+                    chapters: [{
+                            name: "Map Legend",
+                            page: 24
+                        },
+                        {
+                            name: "Rating System",
+                            page: 22
+                        }
+                    ]
+                },
+                2: {
+                    sectionName: "West End",
+                    chapters: [{
+                            name: "Botanical Gardens",
+                            page: 63
+                        },
+                        {
+                            name: "Rockaway, Whale Bay Park",
+                            page: 45
+                        },
+                        {
+                            name: "Somerset Bridge, Hog Bay Park",
+                            page: 39
+                        }
+                    ]
+                }
+            },
+            trails: [{
+                    name: "Somerset to Hamilton Railway Trail",
+                    page: 75,
+                    section: "West End",
+                    distanceInMiles: 11.7,
+                    rating: "Hardy"
+                },
+                {
+                    name: "City of Hamilton",
+                    page: 69,
+                    section: "West End",
+                    distanceInMiles: 2.4,
+                    rating: "Easy"
+                },
+                {
+                    name: "St. George's Point",
+                    page: 131,
+                    section: "East End",
+                    distanceInMiles: 3.6,
+                    rating: "Moderate"
+                },
+                {
+                    name: "South Shore Beaches",
+                    page: 53,
+                    section: "West End",
+                    distanceInMiles: 5.0,
+                    rating: "Moderate"
+                },
+            ]
+        }
+
+        // console log the title of the book
+        console.log("title: ", hikingBermuda.title);
+
+        // console log the author of the book
+        console.log("author: ", hikingBermuda.author);
+
+        // console log the price of the book with $ sign in front of it
+        console.log("price: $", hikingBermuda.price);
+
+        // console log the number of chapters in the Preface section
+        var numChapters = 0;
+        var keys = Object.keys(hikingBermuda.sections);
+        keys.forEach(key => numChapters += hikingBermuda.sections[key].chapters.length);
+        console.log("Number Of Chapters Preface: ", numChapters);
+
+        // console log the number of chapters in the Introduction section
+        var introduction = [
+            ...hikingBermuda.sections[1].chapters
+        ];
+        console.log("number of chapters in introduction: ", introduction.length);
+
+        // console log the number of chapters in the West End section
+        var westEnd = [...hikingBermuda.sections[2].chapters];
+        console.log("number of chapters in west end", westEnd.length);
+
+        // console log the name of the 4th trail
+        console.log(hikingBermuda.trails[3].name);
+
+        // console log the page of the 3rd trail
+        console.log("page of 3rd trail:", hikingBermuda.trails[2].page);
+
+        // console log the section of the 2nd trail
+        console.log("section of 2nd trail: ", hikingBermuda.trails[1].section);
+
+        // console log the rating of the 1st trail
+        console.log("rating of first trail: ", hikingBermuda.trails[0].rating);
+
+        // console log only trails that are at least than 4.0 miles
+        console.log("Trails longer than 4.0 miles: \n");
+        hikingBermuda.trails.forEach(trail => trail.distanceInMiles >= 4 ? console.log("\t", trail.name) : null);
+
+        // console log only trails that are at most 4.0 miles
+        console.log("Trails at most 4.0 miles: \n");
+        hikingBermuda.trails.forEach(trail => trail.distanceInMiles <= 4 ? console.log("\t", trail.name) : null);
+
+        // console log only trails on the West End
+        console.log("Trails on the west end: \n");
+        hikingBermuda.trails.forEach(trail => trail.section === "West End" ? console.log("\t", trail.name) : null);
+
+        // console log only trails on the East End
+        console.log("Trails on the east end: \n");
+        hikingBermuda.trails.forEach(trail => trail.section === "East End" ? console.log("\t", trail.name) : null);
+
+        // console log only moderate trails
+        console.log("Moderate Trails: \n");
+        hikingBermuda.trails.forEach(trail => trail.rating === "Moderate" ? console.log("\t", trail.name) : null);
+
+        // console log only easy trails
+        console.log("Easy: \n");
+        hikingBermuda.trails.forEach(trail => trail.rating === "Easy" ? console.log("\t", trail.name) : null);
+
+        // console log only hardy trails
+        console.log("Hardy: \n");
+        hikingBermuda.trails.forEach(trail => trail.rating === "Hardy" ? console.log("\t", trail.name) : null);
+    </script>
+</body>
+
+</html>

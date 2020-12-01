@@ -1,0 +1,26 @@
+#blue_border {
+    border: 1px solid blue
+}
+
+#red_border {
+    border: 1px solid red;
+    position: relative;
+    left: 400px;
+}
+
+#green_border {
+    border: 1px solid green;
+    position: relative;
+    left: 1000px;
+}
+
+.container {
+    width: fit-content;
+    text-align: center;
+    margin: 15px;
+}
+
+.right_skewed {
+    position: relative;
+    left: 100px;
+}
