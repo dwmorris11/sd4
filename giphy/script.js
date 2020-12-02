@@ -1,5 +1,5 @@
 let searchForm = document.getElementById('search');
-const root = document.getElementById('root');
+const results = document.getElementById('results');
 const container = document.getElementById('buttonContainer');
 searchForm.onsubmit = (event) => {
     event.preventDefault();
@@ -23,8 +23,8 @@ function search(term) {
                 const caption = document.createElement('figcaption');
                 caption.innerHTML = data.title;
                 image.src = imageUrl;
-                root.appendChild(image);
-                root.appendChild(caption);
+                results.appendChild(image);
+                results.appendChild(caption);
             })
         })
         .catch((err) => console.error(err))

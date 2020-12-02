@@ -1,0 +1,14 @@
+img {
+    height: 7vh;
+    width: 10vw;
+    margin: 10px;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+figcaption {
+    max-width: 9vw;
+}
