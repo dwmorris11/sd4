@@ -10,6 +10,7 @@ searchForm.onsubmit = (event) => {
     })
     newButton.innerHTML = event.target.term.value;
     container.appendChild(newButton);
+    event.target.term.value = '';
 }
 
 function search(term) {
